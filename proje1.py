@@ -15,4 +15,7 @@ elif(sonuc>=60):
 elif(sonuc>=55):
     print("Harf Notu: C2, Koşullu Geçer.")
 elif(sonuc>=50):
-  print("Harf Notu: C3, Koşullu Geçer.")
+    print("Harf Notu: C3, Koşullu Geçer.")
+else:
+    print("Harf Notu: FF, Kaldı.")
+      
