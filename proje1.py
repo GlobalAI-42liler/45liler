@@ -32,13 +32,12 @@ def ogrenciBilgiler():
     harf = "C3 Koşullu Geçti"
   else:
     harf="FF Kaldı"
+  Data.append([adsoyad, okulno, ders, vize, final, ortalama])
   print(f"{okulno} numaralı {adsoyad} adlı öğrencinin {ders} dersinden, {ortalama} ortalama ile aldığı harf notu {harf}")
+  print(Data)
 ogrenciBilgiler()
 
-   #Data.append([adsoyad,okulno,ders,vize,final,(vize*0.4+final*0.6)])
-   #print(Data)
-
-
+  
 
 
 
