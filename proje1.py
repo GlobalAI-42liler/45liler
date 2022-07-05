@@ -41,13 +41,13 @@ ogrenciBilgiler()
 
 
 
-def save_al():
+def kaydet():
 
     with open('bilgiler.txt',"r",encoding="utf_8") as file:
         liste = []
 
         for i in file:
-            liste.append(puan_hesaplama(i))
+            liste.append(ortalama(i))
 
         with open("sonuclar.txt","w",encoding="utf_8") as file2:
             for i in liste:
