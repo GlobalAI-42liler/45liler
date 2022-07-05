@@ -7,8 +7,8 @@ def ogrenciBilgiler():
   adsoyad = input("Adınız ve Soyadınız: ")
   okulno = input("Okul Numaranız: ")
   ders = input("Ders giriniz: ")
-  vize = int(input("1. sınav puanınız:"))
-  final = int(input("2. sınav puanınız:"))
+  vize = int(input("Vize puanınız:"))
+  final = int(input("Final puanınız:"))
 
   ortalama = (vize*0.4+final*0.6)
 
@@ -35,7 +35,7 @@ def ogrenciBilgiler():
   print(f"{okulno} numaralı {adsoyad} adlı öğrencinin {ders} dersinden, {ortalama} ortalama ile aldığı harf notu {harf}")
 ogrenciBilgiler()
 
-   # Data.append([adsoyad,okulno,sinavpuani1,sinavpuani2,(sinavpuani1*0.4+sinavpuani2*0.6),puan_hesaplama(sinavpuani1,sinavpuani2)])
+   #Data.append([adsoyad,okulno,vize,final,(vize*0.4+final*0.6),puan_hesaplama(vize,final)])
    #print(Data)
 
 
@@ -63,7 +63,7 @@ while True:
     islem = input('1 - Bilgileri Giriniz\n2 - Notu Kayıt Et\n3 - Notları Görüntüle\n4 - Kapat\n')
 
     if islem == '1':
-        not_giriniz() #not giririş 
+        ogrenciBilgiler() #bilgi girişi
     elif islem == '2':
         save_al()     #notları txt ye kayıt ettirecek
     elif islem == '3':
