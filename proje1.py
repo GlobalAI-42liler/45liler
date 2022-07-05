@@ -15,15 +15,19 @@ def puan_hesaplama(satir):
 
     if ortalama>=90 and ortalama<=100:
         harf="AA"
+        passing = "Gecti"
     elif ortalama>=85 and ortalama<=89:
         harf="BA"
+        passing = "Gecti"
     elif ortalama>=65:
         harf="CC"
+        passing = "Kaldi"
     else:
         harf="FF"
+        passing = "Kaldi"
 
-    return ogrenciAdi + ": " + harf + "\n" 
 
+    return ogrenciAdi + ": " + harf + " " + passing + "\n"
 
 def not_giriniz():
     adsoyad = input('İsminiz: ')
@@ -32,10 +36,18 @@ def not_giriniz():
     sinavpuani2 = input('2. Sınav Notunuz: ')
 
     with open("bilgiler.txt","a", encoding="utf-8") as file:  # yazılan bilgileri txt ye kayıt ettiriyor   #a a Moduyla dosyaya veri kayıt edicez
-        file.write(adsoyad+' '+ okulno+ ' '+sinavpuani1+','+sinavpuani2+'\n') # verileri yazdırıyoruz
+        file.write(adsoyad+' '+ okulno+ ': '+sinavpuani1+','+sinavpuani2+'\n') # verileri yazdırıyoruz
 
 def save_al():
-    pass
+    with open('bilgiler.txt',"r",encoding="utf_8") as file:
+        liste = []
+
+        for i in file:
+            liste.append(puan_hesaplama(i))
+
+        with open("sonuclar.txt","w",encoding="utf_8") as file2:
+            for i in liste:
+                file.write(i)
 
 def ortalamalar_globalAI():
     with open("bilgiler.txt","r",encoding="utf-8") as file: #okuma işlemi yapıcaz
@@ -48,8 +60,10 @@ while True:
     if islem == '1':
         not_giriniz() #not giririş 
     elif islem == '2':
-        ortalamalar_globalAI()     #notları txt ye kayıt ettirecek
+        save_al()     #notları txt ye kayıt ettirecek
     elif islem == '3':
-        save_al()
+        ortalamalar_globalAI()
+
+    
     else:           #yanlış girilen bi numarada fonksiyonu durduracak
-        break
+        break  
