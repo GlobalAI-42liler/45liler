@@ -35,7 +35,7 @@ def ogrenciBilgiler():
   print(f"{okulno} numaralı {adsoyad} adlı öğrencinin {ders} dersinden, {ortalama} ortalama ile aldığı harf notu {harf}")
 ogrenciBilgiler()
 
-   #Data.append([adsoyad,okulno,vize,final,(vize*0.4+final*0.6),puan_hesaplama(vize,final)])
+   #Data.append([adsoyad,okulno,ders,vize,final,(vize*0.4+final*0.6)])
    #print(Data)
 
 
