@@ -64,8 +64,8 @@ while True:
     if islem == '1':
         ogrenciBilgiler() #bilgi girişi
     elif islem == '2':
-        save_al()     #notları txt ye kayıt ettirecek
-    elif islem == '3':
-        ortalamalar_globalAI()
+        kaydet()     #notları txt ye kayıt ettirecek
+    #elif islem == '3':
+    #    ortalamalar_globalAI()
     else:           #yanlış girilen bi numarada fonksiyonu durduracak
         break  
