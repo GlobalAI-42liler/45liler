@@ -1,14 +1,17 @@
+from encodings import utf_8
+from logging.config import listen
+
 def puan_hesaplama(satir):
     satir = satir[:-1]
     liste = satir.split(':')
 
     ogrenciAdi = liste[0]
-    puanlar = liste[1].split(',')
+    notlar = liste[1].split(',')
 
-    sınavpuani1 = int(puanlar[0])
-    sınavpuani2 = int(puanlar[1])
+    sinavpuani1 = int(notlar[0])
+    sinavpuani2 = int(notlar[1])
 
-    ortalama = (sınavpuani1+sınavpuani2)/2
+    ortalama = (sinavpuani1+sinavpuani2)/2
 
     if ortalama>=90 and ortalama<=100:
         harf="AA"
@@ -25,18 +28,17 @@ def puan_hesaplama(satir):
 def not_giriniz():
     adsoyad = input('İsminiz: ')
     okulno = input('Okul Numaranız: ')
-    sınavpuani1 = input('1. Sınav Notunuz: ')
-    sınavpuani2 = input('2. Sınav Notunuz: ')
+    sinavpuani1 = input('1. Sınav Notunuz: ')
+    sinavpuani2 = input('2. Sınav Notunuz: ')
 
     with open("bilgiler.txt","a", encoding="utf-8") as file:  # yazılan bilgileri txt ye kayıt ettiriyor   #a a Moduyla dosyaya veri kayıt edicez
-        file.write(adsoyad+' '+ okulno+ ' '+sınavpuani1+','+sınavpuani2+'\n') # verileri yazdırıyoruz
+        file.write(adsoyad+' '+ okulno+ ' '+sinavpuani1+','+sinavpuani2+'\n') # verileri yazdırıyoruz
 
 def save_al():
     pass
 
-
 def ortalamalar_globalAI():
-    with open("bilgiler.txt","r",encoding="uft-8") as file: #okuma işlemi yapıcaz
+    with open("bilgiler.txt","r",encoding="utf-8") as file: #okuma işlemi yapıcaz
         for satir in file:
             print(puan_hesaplama(satir))
 
@@ -46,7 +48,7 @@ while True:
     if islem == '1':
         not_giriniz() #not giririş 
     elif islem == '2':
-        save_al()     #notları txt ye kayıt ettirecek
+        ortalamalar_globalAI()     #notları txt ye kayıt ettirecek
     elif islem == '3':
         save_al()
     else:           #yanlış girilen bi numarada fonksiyonu durduracak
