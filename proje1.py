@@ -1,6 +1,6 @@
-from openpyxl import Workbook,load_workbook
-from openpyxl.utils import get_column_letter
-from openpyxl.styles import Font
+# from openpyxl import Workbook,load_workbook
+# from openpyxl.utils import get_column_letter
+# from openpyxl.styles import Font
 
 
 def not_giriniz():
@@ -32,58 +32,57 @@ while True:
         break
 
 
+# data={
+#     'Joe':{
+#     'Math':90,
+#     'History':65,
+#     'Physics':100,
+#     'Geography':55,
+#     },
+#     'Matilda':{
+#     'Math':65,
+#     'History':50,
+#     'Physics':85,
+#     'Geography':75,
+#     },
 
-data={
-    'Joe':{
-    'Math':90,
-    'History':65,
-    'Physics':100,
-    'Geography':55,
-    },
-    'Matilda':{
-    'Math':65,
-    'History':50,
-    'Physics':85,
-    'Geography':75,
-    },
-
-     'Jon':{
-    'Math':100,
-    'History':55,
-    'Physics':80,
-    'Geography':90,
-    },
-    'Melda':{
-    'Math':50,
-    'History':95,
-    'Physics':90,
-    'Geography':55,
-    },
-    'Ben':{
-    'Math':100,
-    'History':45,
-    'Physics':85,
-    'Geography':75,
-    }
+#      'Jon':{
+#     'Math':100,
+#     'History':55,
+#     'Physics':80,
+#     'Geography':90,
+#     },
+#     'Melda':{
+#     'Math':50,
+#     'History':95,
+#     'Physics':90,
+#     'Geography':55,
+#     },
+#     'Ben':{
+#     'Math':100,
+#     'History':45,
+#     'Physics':85,
+#     'Geography':75,
+#     }
     
-    }
+#     }
 
 
-wb=Workbook()
-ws=wb.active
-ws.title="Grades"
+# wb=Workbook()
+# ws=wb.active
+# ws.title="Grades"
 
-headings=['Name'] + list(data['Joe'].keys())
+# headings=['Name'] + list(data['Joe'].keys())
 
-ws.append(headings)
+# ws.append(headings)
 
-for person in data:
-    grades=list(data[person].values())
-    ws.append([person]+grades)
-for col in range(2,len(data['Joe'])+2):
-    char = get_column_letter(col)
-    ws[char+7]=f"SUM({char +'2'}:{char +'6'})/{len(data)}"
-for col in range(1,6):
-    ws[get_column_letter(col)+1].font=Font(bold=True,color="00008080")        
+# for person in data:
+#     grades=list(data[person].values())
+#     ws.append([person]+grades)
+# for col in range(2,len(data['Joe'])+2):
+#     char = get_column_letter(col)
+#     ws[char+7]=f"SUM({char +'2'}:{char +'6'})/{len(data)}"
+# for col in range(1,6):
+#     ws[get_column_letter(col)+1].font=Font(bold=True,color="00008080")        
 
-wb.save('NewGrades.xlsx')   
+# wb.save('NewGrades.xlsx')   
