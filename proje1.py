@@ -1,17 +1,11 @@
 from encodings import utf_8
 from logging.config import listen
 
-def puan_hesaplama(satir):
-    satir = satir[:-1]
-    liste = satir.split(':')
 
-    ogrenciAdi = liste[0]
-    notlar = liste[1].split(',')
 
-    sinavpuani1 = int(notlar[0])
-    sinavpuani2 = int(notlar[1])
+def puan_hesaplama(sinavpuani1,sinavpuani2):
 
-    ortalama = (sinavpuani1+sinavpuani2)/2
+    ortalama = sinavpuani1*0,4+sinavpuani2*0,6
 
     if ortalama>=90 and ortalama<=100:
         harf="AA"
@@ -26,19 +20,23 @@ def puan_hesaplama(satir):
         harf="FF"
         passing = "Kaldi"
 
-
-    return ogrenciAdi + ": " + harf + " " + passing + "\n"
-
+    return harf
+    
 def not_giriniz():
     adsoyad = input('İsminiz: ')
     okulno = input('Okul Numaranız: ')
     sinavpuani1 = input('1. Sınav Notunuz: ')
     sinavpuani2 = input('2. Sınav Notunuz: ')
+    Data.append([adsoyad,okulno,sinavpuani1,sinavpuani2(sinavpuani1*0,4+sinavpuani2*0,6),puan_hesaplama(sinavpuani1,sinavpuani2)]) ##kontrol yapılaca
+    
+    print(Data)
 
-    with open("bilgiler.txt","a", encoding="utf-8") as file:  # yazılan bilgileri txt ye kayıt ettiriyor   #a a Moduyla dosyaya veri kayıt edicez
-        file.write(adsoyad+' '+ okulno+ ': '+sinavpuani1+','+sinavpuani2+'\n') # verileri yazdırıyoruz
+
+
+
 
 def save_al():
+
     with open('bilgiler.txt',"r",encoding="utf_8") as file:
         liste = []
 
