@@ -1,19 +1,19 @@
 from encodings import utf_8
 from logging.config import listen
 
-
+Data = []
 
 def puan_hesaplama(sinavpuani1,sinavpuani2):
 
     ortalama = sinavpuani1*0,4+sinavpuani2*0,6
 
-    if ortalama>=90 and ortalama<=100:
+    if ortalama >100:
         harf="AA"
         passing = "Gecti"
-    elif ortalama>=85 and ortalama<=89:
+    elif ortalama >85:
         harf="BA"
         passing = "Gecti"
-    elif ortalama>=65:
+    elif ortalama >65:
         harf="CC"
         passing = "Kaldi"
     else:
@@ -25,9 +25,9 @@ def puan_hesaplama(sinavpuani1,sinavpuani2):
 def not_giriniz():
     adsoyad = input('İsminiz: ')
     okulno = input('Okul Numaranız: ')
-    sinavpuani1 = input('1. Sınav Notunuz: ')
-    sinavpuani2 = input('2. Sınav Notunuz: ')
-    Data.append([adsoyad,okulno,sinavpuani1,sinavpuani2(sinavpuani1*0,4+sinavpuani2*0,6),puan_hesaplama(sinavpuani1,sinavpuani2)]) ##kontrol yapılaca
+    sinavpuani1 = int(input('1. Sınav Notunuz: '))
+    sinavpuani2 = int(input('2. Sınav Notunuz: '))
+    Data.append([adsoyad,okulno,sinavpuani1,sinavpuani2,(sinavpuani1*0,4+sinavpuani2*0,6),puan_hesaplama(sinavpuani1,sinavpuani2)]) ##kontrol yapılaca
     
     print(Data)
 
