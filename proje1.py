@@ -5,7 +5,7 @@ Data = []
 
 def puan_hesaplama(sinavpuani1,sinavpuani2):
 
-    ortalama = sinavpuani1*0,4+sinavpuani2*0,6
+    ortalama = sinavpuani1*0.4+sinavpuani2*0.6
 
     if ortalama >100:
         harf="AA"
@@ -27,8 +27,7 @@ def not_giriniz():
     okulno = input('Okul Numaranız: ')
     sinavpuani1 = int(input('1. Sınav Notunuz: '))
     sinavpuani2 = int(input('2. Sınav Notunuz: '))
-    Data.append([adsoyad,okulno,sinavpuani1,sinavpuani2,(sinavpuani1*0,4+sinavpuani2*0,6),puan_hesaplama(sinavpuani1,sinavpuani2)]) ##kontrol yapılaca
-    
+    Data.append([adsoyad,okulno,sinavpuani1,sinavpuani2,(sinavpuani1*0.4+sinavpuani2*0.6),puan_hesaplama(sinavpuani1,sinavpuani2)])
     print(Data)
 
 
@@ -61,7 +60,5 @@ while True:
         save_al()     #notları txt ye kayıt ettirecek
     elif islem == '3':
         ortalamalar_globalAI()
-
-    
     else:           #yanlış girilen bi numarada fonksiyonu durduracak
         break  
