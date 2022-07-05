@@ -1,1 +1,7 @@
 Global OpenAI 45 45,65
+test deneme 20 23,56
+test deneem2 56 568,98
+test not 568 56,26
+test denem2 586 15,35
+test deneme33 506 15,35
+kali test 598 25,65
