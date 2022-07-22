@@ -67,5 +67,5 @@ while ogrSayisi>0:
 
 
 data = pd.DataFrame(ogr.data)
-data.to_excel("Otomasyon.xlsx")
+data.to_excel("Ogrenci Bilgiler.xlsx")
 print(data)
